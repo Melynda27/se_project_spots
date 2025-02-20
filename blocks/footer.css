@@ -6,7 +6,7 @@
   width: 100%;
 }
 
-.footer__content {
+.footer__page__section  {
   display: flex;
   justify-content: center;
   align-items: center;
