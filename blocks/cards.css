@@ -1,10 +1,7 @@
 .cards {
   padding-top: 20px;
-
-}
-
-.cards__page__section {
   max-width: 1280px;
+  height: 970px;
   margin: 0 auto;
   border-bottom: 1px rgba(33, 33, 33, 0.4) solid;
 }
@@ -14,12 +11,11 @@
   padding: 0;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fit, 414px);
-  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 413px);
   gap: 40px 20px;
 }
 
-@media screen and (max-width 627px) {
+@media screen and (max-width: 627px) {
   .cards__list {
     grid-template-columns: repeat(auto-fit, 288px);
   }
