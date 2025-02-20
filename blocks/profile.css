@@ -56,6 +56,11 @@
   cursor: pointer;
 }
 
+.profile__edit-btn:hover {
+  background-color: transparent;
+  opacity: 40%;
+}
+
 .profile__edit-btn img {
   width: 12px;
   height: auto;
