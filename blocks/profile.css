@@ -18,6 +18,12 @@
 }
 
 .profile__name {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 627px;
   margin: 0 0 12px;
   font-weight: 500;
   line-height: 1;
@@ -26,6 +32,12 @@
 
 .profile__description {
   margin: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  max-width: 627px;
 }
 
 .profile__edit-btn {
@@ -41,9 +53,7 @@
   font-weight: 500;
   color: rgba(0, 0, 0, 0.7);
   width: fit-content;
-  height: 24px;
   cursor: pointer;
-  border-radius: 4px;
 }
 
 .profile__edit-btn img {
@@ -100,27 +110,19 @@
   }
 
   .profile__name {
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    max-width: 627px;
-    fontcolor: #212121;
+    color: #212121;
     font-size: 20px;
     margin: 0 0 6px;
     max-width: 288px;
-    }
+  }
 
   .profile__description {
     margin: 0 0 32px;
     max-width: 288px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    max-width: 420px;
+    color: #212121;
+    font-size: 16px;
+    line-height: 16px;
+    font-weight: 500;
   }
 
   .profile__column {
