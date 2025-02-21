@@ -4,6 +4,7 @@
 
 .card__image {
   border-radius: 8px;
+  border-radius: 8px;
   height: 413px;
   width: 413px;
   object-fit: cover;
@@ -15,6 +16,7 @@
   align-items: center;
   justify-content: space-between;
   max-width: 1280px;
+  margin-top: 12px;
   margin-top: 12px;
 }
 
@@ -31,6 +33,7 @@
 }
 
 .card__like-btn {
+  background-image: url(../images/heart.svg.svg);
   background-image: url(../images/heart.svg.svg);
   width: 23px;
   height: 20px;
@@ -61,4 +64,10 @@
     max-width: 250px;
     font-size: 16px;
   }
+
+  .card__title {
+    max-width: 250px;
+    font-size: 16px;
+  }
 }
+

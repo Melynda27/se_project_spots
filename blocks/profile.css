@@ -112,16 +112,20 @@
   }
 
   .profile__avatar {
+    border-radius: 8px;
     margin-right: 0;
     height: 80px;
     width: 80px;
     margin-bottom: 12px;
+    object-fit: cover;
   }
 
   .profile__name {
+    color: #212121;
     font-size: 20px;
     margin: 0 0 6px;
     max-width: 288px;
+  }
   }
 
   .profile__description {
@@ -130,6 +134,7 @@
     color: #212121;
     font-size: 16px;
     line-height: 16px;
+    font-weight: 500;
   }
 
   .profile__column {
