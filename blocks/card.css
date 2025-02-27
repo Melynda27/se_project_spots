@@ -27,7 +27,7 @@
   overflow: hidden;
   max-width: 350px;
   font-weight: 500;
-  line-height: 24px;
+  line-height: 1.2;
   font-size: 20px;
   text-decoration-color: #212121;
 }
@@ -50,13 +50,14 @@
 }
 
 @media screen and (max-width: 627px) {
-  .card__like-button {
+  .card__like-btn {
     width: 20px;
     height: 18px;
   }
 
   .card__image {
     height: 288px;
+    width: 288px
   }
 
   .card__title {
