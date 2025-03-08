@@ -36,6 +36,10 @@
   height: 40px;
 }
 
+.modal__close-btn image{
+  align-items: center;
+}
+
 .modal__title {
   margin: 0 0 32px;
   font-weight: 500;
