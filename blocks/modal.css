@@ -59,4 +59,6 @@
 .modal__submit-btn {
   width: 156px;
   padding: 18px 0;
+  color: #212121;
+  border-radius: 8px;
 }
