@@ -9,6 +9,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 16px;
   visibility: hidden;
   font-family: Poppins, Arial, Helvetica, sans-serif;
   font-weight: 500;
@@ -37,6 +38,7 @@
 
 .modal__title {
   margin: 0 0 32px;
+  font-weight: 500;
   line-height: 1;
   font-size: 32px;
 }
@@ -61,4 +63,32 @@
   padding: 18px 0;
   color: #212121;
   border-radius: 8px;
+}
+
+@media screen and (max-width: 627px) {
+  .modal {
+    padding: 0 10px;
+  }
+
+  .modal__container {
+    padding: 12px;
+  }
+
+  .modal__title {
+    font-size: 20px;
+    margin: 10px 0 34px;
+  }
+
+  .modal__close-btn {
+    top: 12px;
+    right: 12px;
+  }
+
+  .modal__label {
+    margin-bottom: 24px;
+  }
+
+  .modal__submit-btn {
+    width: 100%;
+  }
 }
