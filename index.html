@@ -110,18 +110,30 @@
       <footer class="footer page__section">
         <p class="footer__copyright">2023 &copy; Spots</p>
       </footer>
-      <div class="modal modal_opened">
+      <div class="modal" id="edit-profile-modal">
         <div class="modal__container">
-          <button type="submit" class="modal__close-btn"><img src="./images/Close Icon.svg" alt="close icon"></button>
+          <button type="submit" class="modal__close-btn">
+            <img src="./images/Close Icon.svg" alt="close icon" />
+          </button>
           <h2 class="modal__title">Edit profile</h2>
           <form name="edit-profile" class="modal__form">
             <label for="name" class="model__label">
               Name
-              <imput id="name" type="text" class="modal__imput" placeholder="Type your name"></imput>
+              <imput
+                id="name"
+                type="text"
+                class="modal__imput"
+                placeholder="Type your name"
+              ></imput>
             </label>
             <label for="description" class="model__label">
               Description
-              <imput id="description" type="text" class="modal__imput" placeholder="Describe yourself"></imput>
+              <imput
+                id="description"
+                type="text"
+                class="modal__imput"
+                placeholder="Describe yourself"
+              ></imput>
             </label>
             <button type="submit" class="modal__submit-btn">Save</button>
           </form>
