@@ -68,7 +68,7 @@
   opacity: 1;
 }
 
-.profile__edit-btn img {
+.profile__edit-btn {
   width: 12px;
   height: auto;
 }
@@ -93,7 +93,7 @@
   position: relative;
 }
 
-.profile__add-btn img {
+.profile__add-btn {
   width: 16px;
   height: 16px;
 }
