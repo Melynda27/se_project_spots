@@ -93,16 +93,7 @@
   gap: 8px;
   cursor: pointer;
   position: relative;
-}
-
-.profile__add-btn text {
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1;
-  width: 73px;
-  height: 16px;
-  gap: 8px;
-  color: #fcf5e5;
+  white-space: nowrap;
 }
 
 .profile__add-btn:hover {
