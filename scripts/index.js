@@ -80,3 +80,8 @@ initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardsList.prepend(cardElement);
 });
+
+initialCards.forEach((item) => {
+  const cardElement = getCardElement(item);
+  cardsList.prepend(cardElement);
+})
