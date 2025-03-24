@@ -34,15 +34,15 @@ const editModal = document.querySelector("#edit-profile-modal");
 const editModalCloseBtn = editModal.querySelector(".modal__close-btn");
 const editFormElement = document.forms["edit-profile"];
 const editModalNameInput = editModal.querySelector("#profile-name-input");
-const editModalDescriptionInput = editModal.querySelector(
-  "#profile-description-input"
-);
+const editModalDescriptionInput = editModal.querySelector("#profile-description-input");
 
 const cardModal = document.querySelector("#add-card-modal");
-const cardModalCloseBtn = document.querySelector;
-
-const cardTemplate = document.querySelector("#card-template").content;
+const cardform = cardModal.querySelector(".modal__form")
+const cardModalCloseBtn = cardModal.querySelector(".modal__close");
+const cardTemplate = document.querySelector("#card-template");
 const cardsList = cardModal.querySelector(".modal_close");
+const cardNameInput = cardModal.quaryselector("#add-card-name-input")
+const cardLinkInput = cardModal.quaryselector("#add-card-link-input")
 
 function getCardElement(data) {
   const cardElement = cardTemplate.querySelector(".card").cloneNode(true);
@@ -67,12 +67,18 @@ function closeModal(modal) {
 
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
-
   profileName.textContent = editModalNameInput.value;
   profileDescription.textContent = editModalDescriptionInput.value;
-
   closeModal();
 }
+
+function handleAddCardSubmit(evt) {
+  evt.preventDefault();
+  const inputvalues = {name: "cardNameInput.value", link: ""};
+  const cardEl = getCardElement(inputValues);
+  cardList.prepend(cardEl);
+  closeModal();
+};
 
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
@@ -89,6 +95,7 @@ cardModalCloseBtn.addEventListener("click", () => {
   closeModal(cardModal);
 });
 editFormElement.addEventListener("submit", handleEditFormSubmit);
+cardform.addEventListener("submit", handleAddCardSubmit)
 
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
