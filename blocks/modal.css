@@ -59,6 +59,22 @@
   top: 0;
   right: -12.5px;
   opacity: 1;
+  color: #212121;
+  width: 135px;
+  height: 32px;
+  padding: 4px 8px;
+  border-radius: 8px;
+  display: flex;
+}
+
+.modal__caption {
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  size: 20px;
+  line-height: 120%;
+  width: 119px;
+  height: 24px;
+  justify-content: center;
 }
 
 .modal__close-btn:hover {
@@ -102,7 +118,7 @@
     padding: 0 10px;
   }
 
-  .modal__container {
+  .modal__content {
     padding: 12px;
   }
 
