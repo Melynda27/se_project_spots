@@ -27,8 +27,8 @@ const cardNameInput = document.querySelector("#add-card-name-input");
 const cardLinkInput = document.querySelector("#add-card-link-input");
 
 const previewModal = document.querySelector("#preview-modal");
-const previewModalImageEl = previewModal.querySelectorAll(".modal__image");
-const previewModalCaptionEl = previewModal.querySelector(".nodal__caption")
+const previewModalImageEl = previewModal.querySelector(".modal__image");
+const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 
 function getCardElement(data) {
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
@@ -36,7 +36,7 @@ function getCardElement(data) {
   const cardNameEl = cardElement.querySelector(".card__title");
   const cardImageEl = cardElement.querySelector(".card__image");
   const cardLikeBtn = cardElement.querySelector(".card__like-btn");
-  const cardDeleteBtn = cardElement.querySelector("#card-template");
+  const cardDeleteBtn = cardElement.querySelector(".card__delete-btn");
 
   cardNameEl.textContent = data.name;
   cardImageEl.src = data.link;
@@ -46,17 +46,17 @@ function getCardElement(data) {
     cardLikeBtn.classList.toggle("card__like-btn_liked");
   });
 
+  cardImageEl.addEventListener("click", () => {
+    openModal(previewModal);
+    previewModalImageEl.src = data.link;
+    previewModalImageEl.alt = data.name;
+    previewModalCaptionEl.textContent = data.name;
+  });
 
-cardImageEl.addEventListener("click" () => {});
-openModal(previewModal);
-previewModalImageEl.src = data.link;
-previewModalCaptionEl.alt = data.name;
-cardNameEl.textContent = data.name;
+  cardDeleteBtn.addEventListener("click", () => {
+    cardElement.remove();
+  });
 
-
-cardDeleteBtn.addEventListener("click", () => {
-  cardDeleteBtn.classList.remove(".card__delete-btn");
-});
   return cardElement;
 }
 
