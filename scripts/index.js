@@ -65,7 +65,7 @@ function openModal(modal) {
 }
 
 function closeModal(modal) {
-  modal.classList.remove("modal_opened");
+  modal.classList.remove("modal_is-open");
 }
 
 function handleEditFormSubmit(evt) {
