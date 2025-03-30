@@ -54,6 +54,7 @@
 }
 
 .modal__close-btn:hover {
+  color: #212121;
   opacity: 1;
 }
 
@@ -64,6 +65,8 @@
   font-weight: 500;
   line-height: 1;
   font-size: 32px;
+  margin: 0;
+  padding: 33px 50px 32px 0;
 }
 
 .modal__label {
@@ -77,10 +80,23 @@
 }
 
 .modal__input {
+  margin: 0;
   border-radius: 8px;
   padding: 16px 12px;
   line-height: 1;
   font-size: 20px;
+  border: 1px solid #21212166;
+  opacity: 40%;
+}
+
+.modal__input:hover {
+  border: 1px solid #212121;
+  opacity: 1;
+}
+
+.modal__input:filled {
+  border: 1px solid #212121;
+  opacity: 40%;
 }
 
 .modal__submit-btn {

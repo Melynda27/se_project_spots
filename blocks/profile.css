@@ -64,6 +64,7 @@
 }
 
 .profile__edit-btn:hover {
+  color: #212121;
   background-color: transparent;
   opacity: 1;
 }
