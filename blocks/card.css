@@ -11,6 +11,14 @@
   display: block;
 }
 
+.card__image-popup {
+  width: 991.5px;
+  height: 661px;
+  margin: 0;
+  border-radius: 8px;
+  padding: 81px 0 0 224px;
+}
+
 .card__content {
   display: flex;
   align-items: center;
@@ -92,9 +100,33 @@
     width: 288px
   }
 
+  .card__image-popup {
+    width: 288px;
+    height: 192px;
+    margin: 0;
+    border-radius: 4px;
+    padding: 206px 0 0 16px;
+  }
+
   .card__title {
     max-width: 250px;
     font-size: 16px;
   }
 }
 
+@media screen and (max-width: 320px) {
+  .card__like-btn {
+    width: 20px;
+    height: 18px;
+  }
+
+  .card__image {
+    height: 288px;
+    width: 288px
+  }
+
+  .card__title {
+    max-width: 250px;
+    font-size: 16px;
+  }
+}

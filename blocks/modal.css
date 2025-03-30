@@ -29,6 +29,12 @@
   position: relative;
 }
 
+.modal__content_type_preview {
+  background-color: transparent;
+  border-width: 2px;
+  border-color: #212121;
+}
+
 .modal__close-btn {
   background: transparent;
   border: none;
@@ -79,6 +85,14 @@
   font-weight: 500;
 }
 
+.modal__image {
+  width: 446.43px;
+  height: 661px;
+  border-radius: 8px;
+  margin: 0;
+  padding: 81px 496.57px 80px 497px
+}
+
 .modal__input {
   margin: 0;
   border-radius: 8px;
@@ -103,14 +117,67 @@
   width: 156px;
   padding: 18px 0;
   background-color: #212121;
-  color: #fff;
+  opacity: 80%;
+  color: #fcf5e5;
   border-radius: 8px;
   cursor: pointer;
 }
 
 @media screen and (max-width: 627px) {
+  .modal__title {
+    padding: 0;
+    margin: 10px 183px 10px 0;
+  }
+
   .modal__content {
     width: 90vw;
     padding: 24px;
+  }
+
+  .modal__image {
+    width: 288px;
+    height: 426.57px;
+    border-radius: 4px;
+    margin: 0;
+    padding: 16px 89px 88.43px 16px
+  }
+
+  .modal__submit-btn {
+    width: 276px;
+    height: 52px;
+    margin: 0;
+    padding: 18px 32px 18px;
+    background-color: #212121;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__title {
+    margin: 0;
+    padding: 10px 183px 10px 0;
+    width: 93px;
+    height: 20px;
+    list-style: 1;
+    font-size: 20px;
+  }
+
+  .modal__content {
+    gap: 8px;
+    margin: 0;
+    padding: 24px 12px 24px 12px;
+  }
+
+  .modal__submit-btn {
+    width: 276px;
+    height: 52px;
+    margin: 0;
+    padding: 18px 32px 18px;
+    background-color: #212121;
+    border-radius: 8px;
+    cursor: pointer;
+    position: relative;
   }
 }
