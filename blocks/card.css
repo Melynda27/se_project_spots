@@ -57,9 +57,9 @@
   border: none;
   cursor: pointer;
   background-image: url(../images/delete-default.svg);
+  background-color: transparent;
   background-size: contain;
   background-repeat: no-repeat;
-  opacity: 0.4;
 }
 
 .card__delete-btn:hover {
@@ -68,7 +68,7 @@
 }
 
 .card__like-btn_liked {
-  background-image: url("../images/heart.svg");
+  background-image: url("../images/liked.svg");
   opacity: 1;
 }
 
