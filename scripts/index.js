@@ -61,11 +61,11 @@ function getCardElement(data) {
 }
 
 function openModal(modal) {
-  modal.classList.add("modal_opened");
+  modal.classList.add("modal__is-open");
 }
 
 function closeModal(modal) {
-  modal.classList.remove("modal_is-open");
+  modal.classList.remove("modal__is-open");
 }
 
 function handleEditFormSubmit(evt) {
