@@ -24,7 +24,8 @@
   border-radius: 10px;
   background-color: #fff;
   padding: 36px 50px 32px;
-  width: 630px;
+  max-width: 630px;
+  width: 100%;
   box-sizing: border-box;
   position: relative;
 }
@@ -33,6 +34,20 @@
   background-color: transparent;
   border-width: 2px;
   border-color: #212121;
+  padding: 0;
+}
+
+.modal__close-btn_type_preview {
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  padding: 0;
+  position: relative;
+}
+
+.modal__close-btn_type_preview:hover {
+  color: #fff;
+  opacity: 40%;
 }
 
 .modal__close-btn {
@@ -47,32 +62,42 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border: none #212121;
+  opacity: 40%;
+}
+
+.modal__close-btn:hover {
+  border: none #212121;
+  opacity: 1;
 }
 
 .modal__caption {
   font-family: Poppins, Arial, Helvetica, sans-serif;
+  text-align: center;
   font-weight: 500;
   font-size: 20px;
   line-height: 120%;
   width: 119px;
   height: 24px;
+  margin-top: 10px;
   justify-content: center;
-}
-
-.modal__close-btn:hover {
-  color: #212121;
-  opacity: 1;
+  background-color: #212121;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 4px 8px 4px 8px;
+  border-radius: 8px;
 }
 
 .modal__title {
   max-width: 149px;
-  min-height: 32px;
+  max-height: 32px;
   color: #212121;
   font-weight: 500;
   line-height: 1;
   font-size: 32px;
-  margin: 0;
-  padding: 33px 50px 32px 0;
+  margin: 0 0 32px 0;
+  white-space: nowrap;
 }
 
 .modal__label {
@@ -86,11 +111,11 @@
 }
 
 .modal__image {
-  width: 446.43px;
-  height: 661px;
+  width: 23.23vw;
+  height: 61.20vh;
   border-radius: 8px;
   margin: 0;
-  padding: 81px 496.57px 80px 497px
+  padding: 81px 496.57px 80px -497px;
 }
 
 .modal__input {
@@ -101,6 +126,7 @@
   font-size: 20px;
   border: 1px solid #21212166;
   opacity: 40%;
+  box-sizing: border-box;
 }
 
 .modal__input:hover {
@@ -114,13 +140,20 @@
 }
 
 .modal__submit-btn {
-  width: 156px;
+  max-width: 156px;
+  width: 100%;
   padding: 18px 0;
   background-color: #212121;
-  opacity: 80%;
   color: #fcf5e5;
   border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
   cursor: pointer;
+  text-align: center;
+}
+
+.modal__submit-btn:hover {
+  opacity: 80%;
 }
 
 @media screen and (max-width: 627px) {
@@ -132,6 +165,47 @@
   .modal__content {
     width: 90vw;
     padding: 24px;
+  }
+
+  .modal__content_type_preview {
+    background-color: transparent;
+    border-width: 2px;
+    border-color: #212121;
+    padding: 0;
+  }
+
+  .modal__close-btn_type_preview {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    padding: 0;
+    position: relative;
+  }
+
+  .modal__close-btn_type_preview:hover {
+    color: #fff;
+    opacity: 40%;
+  }
+
+  .modal__close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 32px;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none #212121;
+    opacity: 40%;
+  }
+
+  .modal__close-btn:hover {
+    border: none #212121;
+    opacity: 1;
   }
 
   .modal__image {
@@ -161,13 +235,62 @@
     width: 93px;
     height: 20px;
     list-style: 1;
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .modal__content {
     gap: 8px;
     margin: 0;
     padding: 24px 12px 24px 12px;
+  }
+
+  .modal__image {
+    width: 288px;
+    height: 192px;
+    border-radius: 4px;
+    margin: 0;
+    padding: 206px 0 16px;
+  }
+
+  .modal__content_type_preview {
+    background-color: transparent;
+    border-width: 2px;
+    border-color: #212121;
+    padding: 0;
+  }
+
+  .modal__close-btn_type_preview {
+    width: 40px;
+    height: 40px;
+    color: #fff;
+    padding: 0;
+    position: relative;
+  }
+
+  .modal__close-btn_type_preview:hover {
+    color: #fff;
+    opacity: 40%;
+  }
+
+  .modal__close-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 32px;
+    right: 50px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none #212121;
+    opacity: 40%;
+  }
+
+  .modal__close-btn:hover {
+    border: none #212121;
+    opacity: 1;
   }
 
   .modal__submit-btn {
