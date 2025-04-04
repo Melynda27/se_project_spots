@@ -40,7 +40,7 @@
 }
 
 .card__like-btn {
-  background-image: url(../images/heartfilled-no-op.svg);
+  background-image: url(../images/oglike.svg);
   width: 23px;
   height: 20px;
   border: none;
@@ -52,6 +52,7 @@
 }
 
 .card__like-btn:hover {
+  background-image: url(../images/likedhover.svg);
   background-color: transparent;
   opacity: 1;
 }
