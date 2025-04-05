@@ -52,7 +52,7 @@
 }
 
 .card__like-btn:hover {
-  background-image: url(../images/likedhover.svg);
+  background-image: url(../images/oglikehover.svg);
   background-color: transparent;
   opacity: 1;
 }
@@ -83,7 +83,7 @@
 }
 
 .card__like-btn_liked:hover {
-  background-image: url("../images/heart-hover.svg");
+  background-image: url("../images/likedhover.svg");
 }
 
 .card__delete-btn:hover {
