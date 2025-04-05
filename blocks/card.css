@@ -41,6 +41,7 @@
 
 .card__like-btn {
   background-image: url(../images/oglike.svg);
+  background-color: transparent;
   width: 23px;
   height: 20px;
   border: none;
@@ -48,7 +49,7 @@
   background-size: contain;
   margin-left: auto;
   background-repeat: no-repeat;
-  opacity: 0.4;
+  opacity: 1;
 }
 
 .card__like-btn:hover {
