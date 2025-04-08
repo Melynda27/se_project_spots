@@ -18,13 +18,15 @@
 .modal__is-open {
   visibility: visible;
   transition: opacity 0.5s linear;
+  padding: 0;
 }
 
 .modal__content {
   border-radius: 10px;
   background-color: #fff;
   padding: 36px 50px 32px;
-  max-width: 630px;
+  max-width: 446px;
+  max-height: 661px;
   width: 100%;
   box-sizing: border-box;
   position: relative;
@@ -34,29 +36,34 @@
   background-color: transparent;
   border-width: 2px;
   border-color: #212121;
+  padding: 0;
   width: auto;
 }
 
 .modal__close-btn_type_preview {
-  background-image: url(../images/white.close.icon.svg);
+  background-image: url(../images/white.close.icon.hover.svg);
+  color: #fff;
   width: 40px;
   height: 40px;
-  top: 80;
-  right: 444;
+  margin: 0;
   padding: 0;
-  position: relative;
+  top: 80px;
+  left: 456.57px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
 .modal__close-btn_type_preview:hover {
-  background-image: url(../images/white.close.icon.hover.svg);
-  opacity: 0;
+  background-image: url(../images/white.close.icon.svg);
+  opacity: 0.4;
 }
 
 .modal__close-btn {
-  background: transparent;
+  background-color: transparent;
   border: none;
   cursor: pointer;
-  position: absolute;
+  position: relative;
   top: 32px;
   right: 50px;
   width: 40px;
@@ -65,7 +72,7 @@
   align-items: center;
   justify-content: center;
   border: none #212121;
-  opacity: 0;
+  opacity: 0.4;
 }
 
 .modal__close-btn:hover {
@@ -136,11 +143,6 @@
   opacity: 1;
 }
 
-.modal__input:filled {
-  border: 1px solid #212121;
-  opacity: 0;
-}
-
 .modal__submit-btn {
   max-width: 156px;
   width: 100%;
@@ -155,7 +157,7 @@
 }
 
 .modal__submit-btn:hover {
-  opacity: 0;
+  opacity: 0.8;
 }
 
 @media screen and (max-width: 627px) {
@@ -167,6 +169,8 @@
   .modal__content {
     width: 90vw;
     padding: 24px;
+    box-sizing: border-box;
+    position: relative;
   }
 
   .modal__content_type_preview {
@@ -181,19 +185,22 @@
     width: 40px;
     height: 40px;
     color: #fff;
-    top: 41;
-    right: -16;
+    top: 41px;
+    right: 264px;
     padding: 0;
-    position: relative;
+    margin: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 
   .modal__close-btn_type_preview:hover {
     background-image: url(../images/white.close.icon.hover.svg);
-    opacity: 0;
+    opacity: 0.4;
   }
 
   .modal__close-btn {
-    background: transparent;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     position: absolute;
@@ -205,7 +212,7 @@
     align-items: center;
     justify-content: center;
     border: none #212121;
-    opacity: 0;
+    opacity: 0.4;
   }
 
   .modal__close-btn:hover {
@@ -231,6 +238,10 @@
     cursor: pointer;
     position: relative;
   }
+
+  .modal__submit-btn:hover {
+    opacity: 0.8;
+  }
 }
 
 @media screen and (max-width: 320px) {
@@ -247,6 +258,8 @@
     gap: 8px;
     margin: 0;
     padding: 24px 12px 24px 12px;
+    box-sizing: border-box;
+    position: relative;
   }
 
   .modal__image {
@@ -261,6 +274,7 @@
     background-color: transparent;
     border-width: 2px;
     border-color: #212121;
+    padding: 0;
     width: auto;
   }
 
@@ -269,19 +283,22 @@
     width: 40px;
     height: 40px;
     color: #fff;
-    top: 158;
-    right: -16;
+    top: 166px;
+    left: 264px;
     padding: 0;
     position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
   }
 
   .modal__close-btn_type_preview:hover {
     background-image: url(../images/white.close.icon.hover.svg);
-    opacity: 0;
+    opacity: 0.4;
   }
 
   .modal__close-btn {
-    background: transparent;
+    background-color: transparent;
     border: none;
     cursor: pointer;
     position: absolute;
@@ -293,7 +310,7 @@
     align-items: center;
     justify-content: center;
     border: none #212121;
-    opacity: 0;
+    opacity: 0.4;
   }
 
   .modal__close-btn:hover {
@@ -310,5 +327,9 @@
     border-radius: 8px;
     cursor: pointer;
     position: relative;
+  }
+
+  .modal__submit-btn:hover {
+    opacity: 0.8;
   }
 }
