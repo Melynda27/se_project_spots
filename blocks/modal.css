@@ -273,7 +273,8 @@
   }
 
   .modal__close-btn_type_preview {
-    background-image: url(../images/white.close.icon.svg);
+    background-image: url(../images/white.close.svg);
+    color: #fff;
     top: -40px;
     left: 226px;
     padding: 0;
@@ -283,7 +284,7 @@
   }
 
   .modal__close-btn_type_preview:hover {
-    background-image: url(../images/white.close.icon.hover.svg);
+    background-image: url(../images/white.close.hover.svg);
     opacity: 0.4;
   }
 
