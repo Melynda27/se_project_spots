@@ -1,10 +1,22 @@
 const showInputError = (formEl, inputEl, errorMsg) => {
   const errorMsgId = inputEl.id + "-error";
+  const errorMsgEl = formEl.querySelector("#" + errorMsgID);
+  errorMsgEl.textContent = errorMsg;
+  inputEl.classList.add("modal__imput_type_error");
+}
+
+const hideInputError = (formEl, inputEl) => {
+  const errorMsgId = inputEl.id + "-error";
+  const errorMsgEl = formEl.querySelector("#" + errorMsgID);
+  errorMsgEl.textContent = "";
+  inputEl.classList.remove("modal__imput_type_error");
 }
 
 const checkInputValidity = (formEl, inputEl) => {
   if (!inputEl.validity.valid) {
     showInputError(formEl, inputEl, inputEl.validationMessage);
+  } else {
+    hideInputError(formEl, inputEl);
   }
 }
 
