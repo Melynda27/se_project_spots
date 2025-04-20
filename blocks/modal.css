@@ -42,16 +42,16 @@
 
 .modal__close-btn {
   background-color: transparent;
-    cursor: pointer;
-    position: relative;
-    top: 32px;
-    right: 50px;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none #212121;
+  cursor: pointer;
+  position: relative;
+  top: 32px;
+  right: 50px;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none #212121;
 }
 
 .modal__close-btn:hover {
@@ -138,9 +138,9 @@
   opacity: 1;
 }
 
-.modal__error{
+.modal__error {
   display: block;
-  color: #FF0000;
+  color: #ff0000;
   font-size: 16px;
   margin-top: 8px;
 }
