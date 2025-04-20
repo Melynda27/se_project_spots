@@ -105,6 +105,7 @@
 }
 
 .modal__label {
+  display: block;
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -135,6 +136,13 @@
 .modal__input:hover {
   border: 1px solid #212121;
   opacity: 1;
+}
+
+.modal__error{
+  display: block;
+  color: #FF0000;
+  font-size: 16px;
+  margin-top: 8px;
 }
 
 .modal__submit-btn {
