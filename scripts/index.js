@@ -85,17 +85,15 @@ function getCardElement(data) {
 // Function to Handle Adding a New Card
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-
-  const inputValues = {
-      name: cardNameInput.value,
-      link: cardLinkInput.value
-  };
-
-  const cardEl = getCardElement(inputValues);
+  const value = {name: captionInput.value, link: cardLinkInput.value };
+  const cardEl = getCardElement (values);
   cardsList.prepend(cardEl);
-
+  evt.target.reset(cardForm);
+  disableButton(cardForm)
+  toggleButtonState(cardForm);
   closeModal(cardModal);
-  cardForm.reset();
+  cardForm.reset(cardModal);
+
 }
 
 // Event Listeners for Opening Modals

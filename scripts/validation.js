@@ -28,16 +28,24 @@ const hasInvalidInput = (inputList) => {
 
 const toggleButtonState = (inputList, buttonEl) => {
   if (hasInvalidInput(inputList)) {
-    buttonEl.disabled = true
+    disableButton(buttonEl);
+  } else {
+    buttonEl.disabled = false;
+    // remove the disabled class
   }
+}
+
+const disableButton = (buttomEl) => {
+  buttonEl.disabled = true
+    // ADD a modifier class to to the bottonEl to make it grey//CSS IS NEEDED
 }
 
 const setEventListener = (formEl) => {
   const inputList = Array.form(formEl.querySelectorAll(".modal__input"));
   const buttonElement = formEl.querySelector(".modal__close-btn");
 
-  //TODO - handle initial states- will handle later
-  //toggleButtonState(inputList, buttonElement);
+
+  toggleButtonState(inputList, buttonElement);
 
   inputList.forEach((inputElement) => {
     inputElement.addEventListener("input", function () {
