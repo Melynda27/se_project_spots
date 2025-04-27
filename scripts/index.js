@@ -65,18 +65,18 @@ function getCardElement(data) {
   cardImageEl.alt = data.name;
 
   cardLikeBtn.addEventListener("click", () => {
-      cardLikeBtn.classList.toggle("card__like-btn_liked");
+    cardLikeBtn.classList.toggle("card__like-btn_liked");
   });
 
   cardImageEl.addEventListener("click", () => {
-      openModal(previewModal);
-      previewModalImageEl.src = data.link;
-      previewModalImageEl.alt = data.name;
-      previewModalCaptionEl.textContent = data.name;
+    openModal(previewModal);
+    previewModalImageEl.src = data.link;
+    previewModalImageEl.alt = data.name;
+    previewModalCaptionEl.textContent = data.name;
   });
 
   cardDeleteBtn.addEventListener("click", () => {
-      cardElement.remove();
+    cardElement.remove();
   });
 
   return cardElement;
@@ -85,15 +85,13 @@ function getCardElement(data) {
 // Function to Handle Adding a New Card
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  const value = {name: captionInput.value, link: cardLinkInput.value };
-  const cardEl = getCardElement (values);
+  const value = { name: cardNameInput.value, link: cardLinkInput.value };
+  const cardEl = getCardElement(value);
   cardsList.prepend(cardEl);
   evt.target.reset(cardForm);
-  disableButton(cardForm)
+  disableButton(cardForm);
   toggleButtonState(cardForm);
   closeModal(cardModal);
-  cardForm.reset(cardModal);
-
 }
 
 // Event Listeners for Opening Modals
@@ -121,3 +119,6 @@ initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardsList.prepend(cardElement);
 });
+
+// Validation
+enableValidation(settings);
