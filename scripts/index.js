@@ -1,10 +1,28 @@
 const initialCards = [
-  { name: "Val Thorens", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg" },
-  { name: "Restaurant terrace", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg" },
-  { name: "An outdoor cafe", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg" },
-  { name: "A very long bridge, over the forest and through the trees", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg" },
-  { name: "Tunnel with morning light", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg" },
-  { name: "Mountain house", link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg" },
+  {
+    name: "Val Thorens",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/1-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
+  {
+    name: "Restaurant terrace",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/2-photo-by-ceiline-from-pexels.jpg",
+  },
+  {
+    name: "An outdoor cafe",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/3-photo-by-tubanur-dogan-from-pexels.jpg",
+  },
+  {
+    name: "A very long bridge, over the forest and through the trees",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/4-photo-by-maurice-laschet-from-pexels.jpg",
+  },
+  {
+    name: "Tunnel with morning light",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/5-photo-by-van-anh-nguyen-from-pexels.jpg",
+  },
+  {
+    name: "Mountain house",
+    link: "https://practicum-content.s3.us-west-1.amazonaws.com/software-engineer/spots/6-photo-by-moritz-feldmann-from-pexels.jpg",
+  },
 ];
 
 // Profile Edit Modal Elements
@@ -35,7 +53,7 @@ const previewModalImageEl = previewModal.querySelector(".modal__image");
 const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn_type_preview");
 
-// Functions to Open and Close Modals
+// Open and Close Modal Functions
 function openModal(modal) {
   modal.classList.add("modal__is-open");
 }
@@ -44,7 +62,7 @@ function closeModal(modal) {
   modal.classList.remove("modal__is-open");
 }
 
-// Function to Handle Profile Edit Form Submission
+// Handle Profile Edit Form Submission
 function handleEditFormSubmit(evt) {
   evt.preventDefault();
   profileName.textContent = editModalNameInput.value;
@@ -52,7 +70,7 @@ function handleEditFormSubmit(evt) {
   closeModal(editModal);
 }
 
-// Function to Create a New Card Element
+// Create Card
 function getCardElement(data) {
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
   const cardNameEl = cardElement.querySelector(".card__title");
@@ -82,43 +100,52 @@ function getCardElement(data) {
   return cardElement;
 }
 
-// Function to Handle Adding a New Card
+// Handle Add Card Submission
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
   const value = { name: cardNameInput.value, link: cardLinkInput.value };
   const cardEl = getCardElement(value);
   cardsList.prepend(cardEl);
-  evt.target.reset(cardForm);
-  disableButton(cardForm);
-  toggleButtonState(cardForm);
+  cardForm.reset();
+
+  const inputList = Array.from(cardForm.querySelectorAll(settings.inputSelector));
+  const buttonElement = cardForm.querySelector(settings.submitButtonSelector);
+  disableButton(buttonElement, settings);
+  toggleButtonState(inputList, buttonElement, settings);
+
   closeModal(cardModal);
 }
 
-// Event Listeners for Opening Modals
+// Open Edit Modal
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
   openModal(editModal);
 });
 
+// Open Add Card Modal + Reset Validation State
 cardModalBtn.addEventListener("click", () => {
+  const inputList = Array.from(cardForm.querySelectorAll(settings.inputSelector));
+  const buttonElement = cardForm.querySelector(settings.submitButtonSelector);
+  disableButton(buttonElement, settings);
+  toggleButtonState(inputList, buttonElement, settings);
   openModal(cardModal);
 });
 
-// Event Listeners for Closing Modals
+// Close Modals
 editModalCloseBtn.addEventListener("click", () => closeModal(editModal));
 cardModalCloseBtn.addEventListener("click", () => closeModal(cardModal));
 previewModalCloseBtn.addEventListener("click", () => closeModal(previewModal));
 
-// Event Listeners for Form Submissions
+// Form Submit Listeners
 editFormElement.addEventListener("submit", handleEditFormSubmit);
 cardForm.addEventListener("submit", handleAddCardSubmit);
 
-// Initial Card Rendering
+// Render Initial Cards
 initialCards.forEach((cardData) => {
   const cardElement = getCardElement(cardData);
   cardsList.prepend(cardElement);
 });
 
-// Validation
+// Enable Validation
 enableValidation(settings);
