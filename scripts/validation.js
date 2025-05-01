@@ -8,7 +8,7 @@ const settings = {
 };
 
 const showInputError = (formEl, inputEl, errorMsg, config) => {
-  const errorMsgId = inputEl.id + "-error";
+  const errorMsgID = `${inputEl.id}-error`;
   const errorMsgEl = formEl.querySelector("#" + errorMsgId);
   errorMsgEl.textContent = errorMsg;
   inputEl.classList.add(config.inputErrorClass);
