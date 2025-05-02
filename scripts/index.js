@@ -58,8 +58,14 @@ function openModal(modal) {
   modal.classList.add("modal__is-open");
 }
 
+function openModal(modal) {
+  modal.classList.add("modal__is-open");
+  document.addEventListener("keydown", handleEscClose);
+}
+
 function closeModal(modal) {
   modal.classList.remove("modal__is-open");
+  document.removeEventListener("keydown", handleEscClose);
 }
 
 // Handle Profile Edit Form Submission
