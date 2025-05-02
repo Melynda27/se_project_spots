@@ -166,7 +166,6 @@
     margin: 20px auto 0 auto;
   }
   }
-}
 
 @media screen and (max-width: 320px) {
   .profile {
@@ -187,12 +186,12 @@
   .profile__name {
     font-size: 20px;
     margin: 0 0 6px;
-    max-width: 288px;
+    max-width: 276px;
   }
 
   .profile__description {
     margin: 0 0 32px;
-    max-width: 288px;
+    max-width: 276px;
     font-size: 16px;
     line-height: 16px;
   }
