@@ -1,3 +1,4 @@
+// Initial Cards Data
 const initialCards = [
   {
     name: "Val Thorens",
@@ -53,19 +54,42 @@ const previewModalImageEl = previewModal.querySelector(".modal__image");
 const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn_type_preview");
 
-// Open and Close Modal Functions
-function openModal(modal) {
-  modal.classList.add("modal__is-open");
-}
-
+// Modal Functions (Refactored)
 function openModal(modal) {
   modal.classList.add("modal__is-open");
   document.addEventListener("keydown", handleEscClose);
+  modal.addEventListener("mousedown", handleOverlayClose);
 }
 
 function closeModal(modal) {
   modal.classList.remove("modal__is-open");
   document.removeEventListener("keydown", handleEscClose);
+  modal.removeEventListener("mousedown", handleOverlayClose);
+}
+
+// Open Preview Modal Function
+function openPreviewModal(imageSrc, captionText) {
+  previewModalImageEl.src = imageSrc;
+  previewModalImageEl.alt = captionText;
+  previewModalCaptionEl.textContent = captionText;
+  openModal(previewModal);
+}
+
+// Handle Escape Key Close
+function handleEscClose(evt) {
+  if (evt.key === "Escape") {
+    const openedModal = document.querySelector(".modal__is-open");
+    if (openedModal) {
+      closeModal(openedModal);
+    }
+  }
+}
+
+// Handle Modal Overlay Close
+function handleOverlayClose(evt) {
+  if (evt.target.classList.contains("modal__is-open")) {
+    closeModal(evt.target);
+  }
 }
 
 // Handle Profile Edit Form Submission
@@ -76,7 +100,7 @@ function handleEditFormSubmit(evt) {
   closeModal(editModal);
 }
 
-// Create Card
+// Create Card Element
 function getCardElement(data) {
   const cardElement = cardTemplate.content.querySelector(".card").cloneNode(true);
   const cardNameEl = cardElement.querySelector(".card__title");
@@ -93,10 +117,7 @@ function getCardElement(data) {
   });
 
   cardImageEl.addEventListener("click", () => {
-    openModal(previewModal);
-    previewModalImageEl.src = data.link;
-    previewModalImageEl.alt = data.name;
-    previewModalCaptionEl.textContent = data.name;
+    openPreviewModal(data.link, data.name);
   });
 
   cardDeleteBtn.addEventListener("click", () => {

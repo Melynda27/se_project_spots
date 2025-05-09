@@ -38,10 +38,14 @@
 
 .modal__content_type_preview {
   background-color: transparent;
-  border-width: 2px;
-  border-color: #212121;
   padding: 0;
   width: auto;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
 }
 
 .modal__close-btn {
@@ -64,37 +68,45 @@
 
 .modal__close-btn_type_preview {
   background-image: url(../images/white.close.svg);
+  border: 2px;
   width: 40px;
   height: 40px;
   margin: 0;
   padding: 0;
-  top: 80px;
-  left: 456.57px;
+  top: -104.98px;
+  right: -52.57px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: contain;
-  position: relative;
+  position: absolute;
+  z-index: 100;
 }
 
 .modal__close-btn_type_preview:hover {
   background-image: url(../images/white.close.hover.svg);
   opacity: 0.4;
+  position: relative;
 }
 
 .modal__caption {
-  text-align: center;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 120%;
-  width: 119px;
-  height: 24px;
-  margin-top: 10px;
+  position: absolute;
+  top: 750px;
+  left: 497px;
+  width: 135px;
+  height: 32px;
+  padding: 4px 8px;
   background-color: #212121;
   color: #fff;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  border-radius: 8px;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 4px 8px;
-  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .modal__title {
@@ -128,8 +140,8 @@
 }
 
 .modal__image {
-  max-width: 100%;
-  max-height: 80vh;
+  max-width: 44.643vh;
+  max-height: 66.1vh;
   object-fit: contain;
   border-radius: 8px;
   margin: 0;
@@ -245,10 +257,19 @@
   }
 
   .modal__close-btn_type_preview {
+    background-image: url(../images/white.close.svg);
+    border: 2px;
     width: 40px;
     height: 40px;
-    top: 41px;
-    right: 264px;
+    margin: 0;
+    padding: 0;
+    top: -20.49px;
+    left: 362px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    position: absolute;
+    z-index: 100;
   }
 
   .modal__close-btn_type_preview:hover {
@@ -256,8 +277,8 @@
   }
 
   .modal__image {
-    max-width: 100%;
-    max-height: 80vh;
+    max-width: 28.8vh;
+    max-height: 42.657vh;
     border-radius: 4px;
   }
 
