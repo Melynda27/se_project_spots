@@ -11,6 +11,10 @@
   display: block;
 }
 
+.card__image:hover {
+  cursor: pointer;
+}
+
 .card__image-popup {
   width: 991.5px;
   height: 661px;
@@ -100,7 +104,7 @@
 
   .card__image {
     height: 288px;
-    width: 288px
+    width: 288px;
   }
 
   .card__image-popup {
@@ -125,7 +129,7 @@
 
   .card__image {
     height: 288px;
-    width: 288px
+    width: 288px;
   }
 
   .card__title {
