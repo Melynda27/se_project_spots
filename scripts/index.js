@@ -54,7 +54,7 @@ const previewModalImageEl = previewModal.querySelector(".modal__image");
 const previewModalCaptionEl = previewModal.querySelector(".modal__caption");
 const previewModalCloseBtn = previewModal.querySelector(".modal__close-btn_type_preview");
 
-// Modal Functions (Refactored)
+// Modal Functions
 function openModal(modal) {
   modal.classList.add("modal__is-open");
   document.addEventListener("keydown", handleEscClose);
@@ -87,10 +87,18 @@ function handleEscClose(evt) {
 
 // Handle Modal Overlay Close
 function handleOverlayClose(evt) {
-  if (evt.target.classList.contains("modal__is-open")) {
-    closeModal(evt.target);
+  if (
+    evt.target === evt.currentTarget || // clicked on overlay itself
+    evt.target.classList.contains("modal__close-btn") // or clicked close button
+  ) {
+    closeModal(evt.currentTarget);
   }
 }
+
+const modals = document.querySelectorAll(".modal");
+modals.forEach((modal) => {
+  modal.addEventListener("mousedown", handleOverlayClose);
+});
 
 // Handle Profile Edit Form Submission
 function handleEditFormSubmit(evt) {
@@ -127,39 +135,60 @@ function getCardElement(data) {
   return cardElement;
 }
 
+// Render Card with flexible insertion method (default prepend)
+function renderCard(item, method = "prepend") {
+  const cardElement = getCardElement(item);
+  cardsList[method](cardElement);
+}
+
 // Handle Add Card Submission
 function handleAddCardSubmit(evt) {
   evt.preventDefault();
-  const value = { name: cardNameInput.value, link: cardLinkInput.value };
-  const cardEl = getCardElement(value);
-  cardsList.prepend(cardEl);
+
+  const newCard = {
+    name: cardNameInput.value,
+    link: cardLinkInput.value,
+  };
+
+  renderCard(newCard, "prepend");
+
   cardForm.reset();
 
   const inputList = Array.from(cardForm.querySelectorAll(settings.inputSelector));
   const buttonElement = cardForm.querySelector(settings.submitButtonSelector);
-  disableButton(buttonElement, settings);
-  toggleButtonState(inputList, buttonElement, settings);
+
+  // Reset validation state for the form (disable button, clear errors)
+  resetValidation(cardForm, inputList, settings);
 
   closeModal(cardModal);
 }
 
-// Open Edit Modal
+// Open Edit Profile Modal + Reset Validation
 profileEditButton.addEventListener("click", () => {
   editModalNameInput.value = profileName.textContent;
   editModalDescriptionInput.value = profileDescription.textContent;
+
+  const inputList = Array.from(editFormElement.querySelectorAll(settings.inputSelector));
+  resetValidation(editFormElement, inputList, settings);
+
+  const buttonElement = editFormElement.querySelector(settings.submitButtonSelector);
+  disableButton(buttonElement, settings);
+
   openModal(editModal);
 });
 
-// Open Add Card Modal + Reset Validation State
+// Open Add Card Modal + Reset Validation
 cardModalBtn.addEventListener("click", () => {
   const inputList = Array.from(cardForm.querySelectorAll(settings.inputSelector));
+  resetValidation(cardForm, inputList, settings);
+
   const buttonElement = cardForm.querySelector(settings.submitButtonSelector);
   disableButton(buttonElement, settings);
-  toggleButtonState(inputList, buttonElement, settings);
+
   openModal(cardModal);
 });
 
-// Close Modals
+// Close Modals Buttons
 editModalCloseBtn.addEventListener("click", () => closeModal(editModal));
 cardModalCloseBtn.addEventListener("click", () => closeModal(cardModal));
 previewModalCloseBtn.addEventListener("click", () => closeModal(previewModal));
@@ -170,9 +199,8 @@ cardForm.addEventListener("submit", handleAddCardSubmit);
 
 // Render Initial Cards
 initialCards.forEach((cardData) => {
-  const cardElement = getCardElement(cardData);
-  cardsList.prepend(cardElement);
+  renderCard(cardData, "append"); // append initial cards at the end
 });
 
-// Enable Validation
+// Enable Validation from validation.js
 enableValidation(settings);
